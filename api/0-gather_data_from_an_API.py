@@ -6,12 +6,12 @@ from requests import get
 from sys import argv
 
 if __name__ == "__main__":
-    base_url = 'https://jsonplaceholder.typicode.com/users/'
+    url = 'https://jsonplaceholder.typicode.com/users/'
     user_id = argv[1]
     final_msg = 'Employee {} is done with tasks({}/{}):'
+    user_url = url + user_id 
 
-    user_url = '{}{}'.format(base_url, user_id)
-    todo_url = '{}{}/todos'.format(base_url, user_id)
+    todo_url = '{}{}/todos'.format(url, user_id)
     completed_tasks_url = '{}?completed=true'.format(todo_url)
 
     user = get(user_url).json()
