@@ -9,7 +9,7 @@ if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/users/'
     user_id = argv[1]
     final_msg = 'Employee {} is done with tasks({}/{}):'
-    user_url = url + user_id 
+    user_url = url + user_id
 
     todo_url = '{}{}/todos'.format(url, user_id)
     completed_tasks_url = '{}?completed=true'.format(todo_url)
@@ -26,4 +26,3 @@ if __name__ == "__main__":
 
     for task in completed_tasks:
         print('\t {}'.format(task.get("title")))
-
